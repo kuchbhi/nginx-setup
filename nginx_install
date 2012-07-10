@@ -6,7 +6,7 @@ else
     NGINX_VER=1.2.1
 fi
 echo "Installing Nginx version: $NGINX_VER"
-wget 'http://nginx.org/download/nginx-$NGINX_VER.tar.gz'
+wget http://nginx.org/download/nginx-$NGINX_VER.tar.gz
 tar -xzvf nginx-$NGINX_VER.tar.gz
 cd nginx-$NGINX_VER/
 sudo yum install -y patch

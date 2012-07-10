@@ -1,8 +1,14 @@
 #Install Nginx 1.2.1 and patch for WS Support
 git clone https://github.com/yaoweibin/nginx_tcp_proxy_module.git
-wget 'http://nginx.org/download/nginx-1.2.1.tar.gz'
-tar -xzvf nginx-1.2.1.tar.gz
-cd nginx-1.2.1/
+if [ $1 != "" ]; then
+    NGINX_VER=$1
+else
+    NGINX_VER=1.2.1
+fi
+echo "Installing Nginx version: $NGINX_VER"
+wget 'http://nginx.org/download/nginx-$NGINX_VER.tar.gz'
+tar -xzvf nginx-$NGINX_VER.tar.gz
+cd nginx-$NGINX_VER/
 sudo yum install -y patch
 sudo yum install -y pcre-devel
 # Crypto needed?
@@ -14,7 +20,7 @@ sudo make install
 cd ..
 
 #Delete temps
-sudo rm -R nginx-1.2.1
+sudo rm -R nginx-$NGINX_VER
 sudo rm -R nginx_tcp_proxy_module
 sudo rm *.gz
 

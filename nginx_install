@@ -22,4 +22,9 @@ sudo cp nginx /etc/init.d/
 sudo chmod +x /etc/init.d/nginx
 sudo /sbin/chkconfig nginx on
 
+#Start NGINX
+sudo /etc/init.d/nginx restart
 
+#Clean up
+cd ..
+sudo rm -R nginx-setup

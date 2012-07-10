@@ -5,6 +5,7 @@ cd nginx-1.2.1/
 sudo yum install -y patch
 sudo yum install -y pcre-devel
 sudo patch -p1 < ../nginx_tcp_proxy_module/tcp.patch
-sudo ./configure --add-module=../nginx_tcp_proxy_modulesudo make
+sudo ./configure --add-module=../nginx_tcp_proxy_module
+sudo make
 sudo make install
 
